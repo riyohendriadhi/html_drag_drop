@@ -1,0 +1,109 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></li>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></li>
+
+    <style type="text/css">
+        .row-sort {
+            margin-left: 20px;
+            background-color: darkgray;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 94%;
+            margin-bottom: 6px;
+        }
+    
+            .row-sort:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+    
+    </style>
+
+</head>
+<body>
+
+<!---HTML-->
+<div class="sorted_table" id="tbl_info">
+    <div class="bodydiv">
+
+            <div class="row-sort">
+                <div class="row-info-no">
+                    1
+                </div>
+                <div class="col-lg-9">
+                    BYRU Satelit
+                </div>
+                <div>
+                    <strong>Redeem</strong> : 564
+                </div>
+                <div class="col-lg-9">
+                    Paket Data
+                </div>
+                <div>
+                    <strong>Cash</strong> : 5,434
+                </div>
+            </div>
+            <div class="row-sort">
+                <div class="row-info-no">
+                    1
+                </div>
+                <div class="col-lg-9">
+                    BYRU Satelit
+                </div>
+                <div>
+                    <strong>Redeem</strong> : 876
+                </div>
+                <div class="col-lg-9">
+                    Paket Data
+                </div>
+                <div>
+                    <strong>Cash</strong> : 98,765
+                </div>
+            </div>
+
+    </div>
+</div>
+
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" id="btnSaveSort" onclick="btnSaveSort_Click()">Save</button>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="jquery-sortable.js"></script>
+
+<script>
+
+    function populateRowNum(selector) {
+
+        $('#' + selector).each(function (index, item) {
+            $(item).text(index + 1);
+        });
+    }
+
+    $('#tbl_info.sorted_table').sortable({
+        itemPath: '> .bodydiv',
+        itemSelector: '.row-sort',
+        cursor: "move",
+        onDragStart: function ($item, container, _super) {
+            // do nothing
+        },
+        onDrop: function ($item, container, _super) {
+            populateRowNum('tbl_info .row-info-no');
+        }
+    });
+
+
+     function btnSaveSort_Click() {
+        alert('Mission Passed');
+        btnClose_Click();
+    }
+</script>
+
+</body>
+</html>
