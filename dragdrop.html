@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+
+
+<table id="tbl_info" class="table table-bordered table-striped table-hover sorted_table">
+    <thead>
+        <tr style="display:none">
+            <td></td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr id="" style="">
+            <td style="width:50px;" class="row-info-no">1</td>
+            <td style="width:100%"><label cols="40" rows="2" style="resize:vertical">Voucher berlaku dengan menunjukan Voucher yang sudah dibeli di apps</label></td>
+            <td style="width:100%">
+                <a class="fa fa-close" onclick="DeleteInfo((this.parentNode.parentNode.rowIndex))"></a>
+            </td>
+        </tr><tr id="" style="">
+            <td style="width:50px;" class="row-info-no">2</td>
+            <td style="width:100%"><label cols="40" rows="2" style="resize:vertical">Mohon menginformasikan penggunaan voucher ini di awal pemesanan ke kasir</label></td>
+            <td style="width:100%">
+                <a class="fa fa-close" onclick="DeleteInfo((this.parentNode.parentNode.rowIndex))"></a>
+            </td>
+        </tr><tr id="" style="">
+            <td style="width:50px;" class="row-info-no">3</td>
+            <td style="width:100%"><label cols="40" rows="2" style="resize:vertical">Masa berlaku Voucher hanya 1 bulan terhitung dari tanggal pembelian</label></td>
+            <td style="width:100%">
+                <a class="fa fa-close" onclick="DeleteInfo((this.parentNode.parentNode.rowIndex))"></a>
+            </td>
+        </tr><tr id="" style="">
+            <td style="width:50px;" class="row-info-no">4</td>
+            <td style="width:100%"><label cols="40" rows="2" style="resize:vertical">Voucher hanya berlaku dine-in dan tidak berlaku take away</label></td>
+            <td style="width:100%">
+                <a class="fa fa-close" onclick="DeleteInfo((this.parentNode.parentNode.rowIndex))"></a>
+            </td>
+        </tr><tr id="" style="">
+            <td style="width:50px;" class="row-info-no">5</td>
+            <td style="width:100%"><label cols="40" rows="2" style="resize:vertical">Tidak ada Maksimal penggunaan voucher dalam 1 transaksi</label></td>
+            <td style="width:100%">
+                <a class="fa fa-close" onclick="DeleteInfo((this.parentNode.parentNode.rowIndex))"></a>
+            </td>
+        </tr><tr id="" style="">
+            <td style="width:50px;" class="row-info-no">6</td>
+            <td style="width:100%"><label cols="40" rows="2" style="resize:vertical">Penggunaan voucher berlaku setiap hari termasuk hari libur nasional</label></td>
+            <td style="width:100%">
+                <a class="fa fa-close" onclick="DeleteInfo((this.parentNode.parentNode.rowIndex))"></a>
+            </td>
+        </tr><tr id="" style="">
+            <td style="width:50px;" class="row-info-no">7</td>
+            <td style="width:100%"><label cols="40" rows="2" style="resize:vertical">Voucher tidak berlaku untuk penggunaan promo yang sedang berjalan di Outlet Boga Group</label></td>
+            <td style="width:100%">
+                <a class="fa fa-close" onclick="DeleteInfo((this.parentNode.parentNode.rowIndex))"></a>
+            </td>
+        </tr><tr id="" style="">
+            <td style="width:50px;" class="row-info-no">8</td>
+            <td style="width:100%"><label cols="40" rows="2" style="resize:vertical">Voucher berlaku untuk pembelian makanan dan minuman</label></td>
+            <td style="width:100%">
+                <a class="fa fa-close" onclick="DeleteInfo((this.parentNode.parentNode.rowIndex))"></a>
+            </td>
+        </tr><tr id="" style="">
+            <td style="width:50px;" class="row-info-no">9</td>
+            <td style="width:100%"><label cols="40" rows="2" style="resize:vertical">Voucher sudah termasuk pajak dan layanan</label></td>
+            <td style="width:100%">
+                <a class="fa fa-close" onclick="DeleteInfo((this.parentNode.parentNode.rowIndex))"></a>
+            </td>
+        </tr><tr id="" style="">
+            <td style="width:50px;" class="row-info-no">10</td>
+            <td style="width:100%"><label cols="40" rows="2" style="resize:vertical">Voucher sebagai alat pembayaran tidak dapat ditukar dengan Cash</label></td>
+            <td style="width:100%">
+                <a class="fa fa-close" onclick="DeleteInfo((this.parentNode.parentNode.rowIndex))"></a>
+            </td>
+        </tr><tr id="" style="">
+            <td style="width:50px;" class="row-info-no">11</td>
+            <td style="width:100%"><label cols="40" rows="2" style="resize:vertical">Jumlah transaksi jika kurang dari nominal voucher tidak dapat dikembalikan</label></td>
+            <td style="width:100%">
+                <a class="fa fa-close" onclick="DeleteInfo((this.parentNode.parentNode.rowIndex))"></a>
+            </td>
+        </tr><tr id="templateRow_info" style="display:none">
+            <td style="width:50px;" class="row-info-no">12</td>
+            <td style="width:100%"><label cols="40" rows="2" style="resize:vertical">{data}</label></td>
+            <td style="width:100%">
+                <a class="fa fa-close" onclick="DeleteInfo((this.parentNode.parentNode.rowIndex))"></a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="jquery-sortable.js"></script>
+
+<script type="text/javascript">
+     function populateRowNum(selector)
+    {
+        $('#' + selector).each(function(index, item){
+            $(item).text(index + 1);
+        });
+    }
+    
+    $('#tbl_info.sorted_table').sortable({
+            containerSelector: 'table',
+            itemPath: '> tbody',
+            itemSelector: 'tr',
+            placeholder: '<tr class="placeholder"/>',
+            onDragStart: function ($item, container, _super) {
+                // do nothing
+            },
+            onDrop: function  ($item, container, _super) {
+                populateRowNum('tbl_info .row-info-no');
+            }
+        });
+</script>
+
+
+</body>
+</html>

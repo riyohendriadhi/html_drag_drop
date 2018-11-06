@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></li>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></li>
+
+</head>
+<body>
+
+
+
+<div id="tbl_info" class="table table-bordered table-striped table-hover sorted_table">
+    
+    <div class="bodydiv">
+        <div class="row" style="height:50px;border:2px blue solid; margin:2px">
+            <div style="width:50px;float: left;" class="row-info-no">1</div>
+            <div style="width:100%"><div cols="40" rows="2" style="resize:vertical">Voucher berlaku dengan menunjukan Voucher yang sudah dibeli di apps</div></div>
+            <div style="width:100%">
+                <a class="fa fa-close" onclick="DeleteInfo((this.parentNode.parentNode.rowIndex))"></a>
+            </div>
+        </div>
+        <div class="row" style="height:50px;border:2px blue solid; margin:2px">
+            <div style="width:50px;float:left" class="row-info-no">2</div>
+            <div style="width:100%"><div cols="40" rows="2" style="resize:vertical">Mohon menginformasikan penggunaan voucher ini di awal pemesanan ke kasir</div></div>
+            <div style="width:100%">
+                <a class="fa fa-close" onclick="DeleteInfo((this.parentNode.parentNode.rowIndex))"></a>
+            </div>
+        </div>
+        <div class="row" style="height:50px;border:2px blue solid; margin:2px">
+            <div style="width:50px;float:left" class="row-info-no">3</div>
+            <div style="width:100%"><div cols="40" rows="2" style="resize:vertical">Masa berlaku Voucher hanya 1 bulan terhitung dari tanggal pembelian</div></div>
+            <div style="width:100%">
+                <a class="fa fa-close" onclick="DeleteInfo((this.parentNode.parentNode.rowIndex))"></a>
+            </div>
+        </div>
+        <div class="row" style="height:50px;border:2px blue solid; margin:2px">
+            <div style="width:50px;float:left" class="row-info-no">4</div>
+            <div style="width:100%"><div cols="40" rows="2" style="resize:vertical">Voucher hanya berlaku dine-in dan tidak berlaku take away</div></div>
+            <div style="width:100%">
+                <a class="fa fa-close" onclick="DeleteInfo((this.parentNode.parentNode.rowIndex))"></a>
+            </div>
+        </div>
+        <div class="row" style="height:50px;border:2px blue solid; margin:2px">
+            <div style="width:50px;float:left" class="row-info-no">5</div>
+            <div style="width:100%"><div cols="40" rows="2" style="resize:vertical">Tidak ada Maksimal penggunaan voucher dalam 1 divansaksi</div></div>
+            <div style="width:100%">
+                <a class="fa fa-close" onclick="DeleteInfo((this.parentNode.parentNode.rowIndex))"></a>
+            </div>
+        </div>
+        <div class="row" style="height:50px;border:2px blue solid; margin:2px">
+            <div style="width:50px;float:left" class="row-info-no">6</div>
+            <div style="width:100%"><div cols="40" rows="2" style="resize:vertical">Penggunaan voucher berlaku setiap hari termasuk hari libur nasional</div></div>
+            <div style="width:100%">
+                <a class="fa fa-close" onclick="DeleteInfo((this.parentNode.parentNode.rowIndex))"></a>
+            </div>
+        </div>
+        <div class="row" style="height:50px;border:2px blue solid; margin:2px">
+            <div style="width:50px;float:left" class="row-info-no">7</div>
+            <div style="width:100%"><div cols="40" rows="2" style="resize:vertical">Voucher tidak berlaku untuk penggunaan promo yang sedang berjalan di Outlet Boga Group</div></div>
+            <div style="width:100%">
+                <a class="fa fa-close" onclick="DeleteInfo((this.parentNode.parentNode.rowIndex))"></a>
+            </div>
+        </div>
+        <div class="row" style="height:50px;border:2px blue solid; margin:2px">
+            <div style="width:50px;float:left" class="row-info-no">8</div>
+            <div style="width:100%"><div cols="40" rows="2" style="resize:vertical">Voucher berlaku untuk pembelian makanan dan minuman</div></div>
+            <div style="width:100%">
+                <a class="fa fa-close" onclick="DeleteInfo((this.parentNode.parentNode.rowIndex))"></a>
+            </div>
+        </div>
+        <div class="row" style="height:50px;border:2px blue solid; margin:2px">
+            <div style="width:50px;float:left" class="row-info-no">9</div>
+            <div style="width:100%"><div cols="40" rows="2" style="resize:vertical">Voucher sudah termasuk pajak dan layanan</div></div>
+            <div style="width:100%">
+                <a class="fa fa-close" onclick="DeleteInfo((this.parentNode.parentNode.rowIndex))"></a>
+            </div>
+        </div>
+        <div class="row" style="height:50px;border:2px blue solid; margin:2px">
+            <div style="width:50px;float:left" class="row-info-no">10</div>
+            <div style="width:100%"><div cols="40" rows="2" style="resize:vertical">Voucher sebagai alat pembayaran tidak dapat ditukar dengan Cash</div></div>
+            <div style="width:100%">
+                <a class="fa fa-close" onclick="DeleteInfo((this.parentNode.parentNode.rowIndex))"></a>
+            </div>
+        </div>
+        <div class="row" style="height:50px;border:2px blue solid; margin:2px">
+            <div style="width:50px;float:left" class="row-info-no">11</div>
+            <div style="width:100%"><div cols="40" rows="2" style="resize:vertical">Jumlah divansaksi jika kurang dari nominal voucher tidak dapat dikembalikan</div></div>
+            <div style="width:100%">
+                <a class="fa fa-close" onclick="DeleteInfo((this.parentNode.parentNode.rowIndex))"></a>
+            </div>
+        </div>
+        <div id="templateRow_info" style="display:none">
+            <div style="width:50px;float:left" class="row-info-no">12</div>
+            <div style="width:100%"><div cols="40" rows="2" style="resize:vertical">{data}</div></div>
+            <div style="width:100%">
+                <a class="fa fa-close" onclick="DeleteInfo((this.parentNode.parentNode.rowIndex))"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="jquery-sortable.js"></script>
+
+<script type="text/javascript">
+     function populateRowNum(selector)
+    {
+        $('#' + selector).each(function(index, item){
+            $(item).text(index + 1);
+        });
+    }
+    
+    $('#tbl_info.sorted_table').sortable({
+            // containerSelector: 'table',
+            itemPath: '> .bodydiv',
+            itemSelector: '.row',
+            // placeholder: '<div class="row" class="placeholder"/>',
+            cursor: "move",
+            onDragStart: function ($item, container, _super) {
+                // do nothing
+            },
+            onDrop: function  ($item, container, _super) {
+                populateRowNum('tbl_info .row-info-no');
+            }
+        });
+
+    // $('#tbl_info.sorted_table').sortable({
+    //         containerSelector: 'table',
+    //         itemPath: '> tbody',
+    //         itemSelector: 'tr',
+    //         placeholder: '<tr class="placeholder"/>',
+    //         onDragStart: function ($item, container, _super) {
+    //             // do nothing
+    //         },
+    //         onDrop: function  ($item, container, _super) {
+    //             populateRowNum('tbl_info .row-info-no');
+    //         }
+    //     });
+
+
+</script>
+
+
+</body>
+</html>
